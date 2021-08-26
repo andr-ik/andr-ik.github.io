@@ -5,10 +5,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test site</title>
-    <meta name="pushsdk" content="dbc206b2655aefb5b9ed7a028efd4239">
 </head>
 <body>
 <p><a href="/1/">Test 1</a></p>
 <p><a href="/2/">Test 2</a></p>
+
+<script>
+    var url = new URL(window.location.href);
+    var pci = url.searchParams.get('1');
+    var ppi = url.searchParams.get('1');
+    var s = document.createElement('script');
+    s.src='//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686'+'&ymid='+pci+'&var='+ppi+'&sw=/sw-check-permissions-3d4f4.js';
+    s.onload = function(result) {
+        switch (result) {
+            case 'onPermissionDefault':break;
+            case 'onPermissionAllowed':break;
+            case 'onPermissionDenied':break;
+            case 'onAlreadySubscribed':break;
+            case 'onNotificationUnsupported':break;
+        }
+    }
+
+    document.head.appendChild(s);
+</script>
 </body>
 </html>
