@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notix</title>
+</head>
+<body>
+<h1>Notix</h1>
+
+<script id="script">
+    var s = document.createElement("script")
+    s.src = "https://notix.io/ent/current/enot.min.js"
+    s.onload = function (sdk) {
+        sdk.startInstall({
+            appId: "100501c1c62d5a2f1e4c05ef008637f",
+        })
+    }
+    document.head.append(s)
+</script>
+</body>
+</html>
