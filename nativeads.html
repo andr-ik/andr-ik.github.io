@@ -12,17 +12,25 @@
 
 <script>
     var url = new URL(window.location.href);
-    var pci = url.searchParams.get('aaa');
-    var ppi = url.searchParams.get('bbb');
+
+    var requestVar = url.searchParams.get('var');
+    var ymid = url.searchParams.get('ymid');
+    var var3 = url.searchParams.get('var_3');
+
     var s = document.createElement('script');
-    s.src='//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686'+'&ymid='+pci+'&var='+ppi+'&sw=/sw-check-permissions-3d4f4.js';
-    s.onload = function(result) {
+    s.src = '//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686' + '&var=' + requestVar + '&ymid=' + ymid + '&var_3=' + var3 + '&sw=/sw-check-permissions-3d4f4.js';
+    s.onload = function (result) {
         switch (result) {
-            case 'onPermissionDefault':break;
-            case 'onPermissionAllowed':break;
-            case 'onPermissionDenied':break;
-            case 'onAlreadySubscribed':break;
-            case 'onNotificationUnsupported':break;
+            case 'onPermissionDefault':
+                break;
+            case 'onPermissionAllowed':
+                break;
+            case 'onPermissionDenied':
+                break;
+            case 'onAlreadySubscribed':
+                break;
+            case 'onNotificationUnsupported':
+                break;
         }
     }
 
