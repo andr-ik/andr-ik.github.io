@@ -14,6 +14,8 @@ maximum-scale=1.0, minimum-scale=1.0">
 <p><a href="/2/">Test 2</a></p>
 
 <script>
+    var url = new URL(window.location.href);
+    
     var requestVar = url.searchParams.get('var');
     var ymid = url.searchParams.get('ymid');
     var var3 = url.searchParams.get('var_3');
