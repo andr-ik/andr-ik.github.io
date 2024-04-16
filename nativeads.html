@@ -1,13 +1,12 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, 
-user-scalable=no, initial-scale=1.0, 
+          content="width=device-width,
+user-scalable=no, initial-scale=1.0,
 maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" 
-content="ie=edge">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
     <title>Test site</title>
 </head>
 <body>
@@ -15,35 +14,32 @@ content="ie=edge">
 <p><a href="/2/">Test 2</a></p>
 
 <script>
-    var url = new URL(window.location.href);
-    var pci = url.searchParams.get('aaa');
-    var ppi = url.searchParams.get('bbb');
+    var requestVar = url.searchParams.get('var');
+    var ymid = url.searchParams.get('ymid');
+    var var3 = url.searchParams.get('var_3');
+
     var s = document.createElement('script');
-    
-//s.src='//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686'+'&ymid='+pci+'&var='+ppi+'&sw=/sw-check-permissions-3d4f4.js';
-    
-s.src='//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686'+'&ymid='+pci+'&var='+ppi+'&sw=/service-worker.min.js';
-    s.onload = function(result) {
+    s.src = '//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686' + '&var=' + requestVar + '&ymid=' + ymid + '&var_3=' + var3 + '&sw=/sw-check-permissions-3d4f4.js';
+
+    s.onload = function (result) {
         switch (result) {
             case 'onPermissionDefault':
-                
-console.log("onPermissionDefault"); break;
+                console.log("onPermissionDefault");
+                break;
             case 'onPermissionAllowed':
-                
-console.log("onPermissionAllowed"); break;
+                console.log("onPermissionAllowed");
+                break;
             case 'onPermissionDenied':
-                
-console.log("onPermissionDenied"); break;
+                console.log("onPermissionDenied");
+                break;
             case 'onAlreadySubscribed':
-                
-console.log("onAlreadySubscribed"); break;
+                console.log("onAlreadySubscribed");
+                break;
             case 'onNotificationUnsupported':
-                
-console.log("onNotificationUnsupported"); 
-break;
+                console.log("onNotificationUnsupported");
+                break;
         }
     }
-
     document.head.appendChild(s);
 </script>
 </body>
