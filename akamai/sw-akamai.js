@@ -32,4 +32,4 @@ self.options = {
     "var": getVar()
 }
 self.lary = "";
-importScripts('https://fmt-stg-lb01.rtty.in/pfe/current/sw.perm.check.min.js?r=sw');
+importScripts('https://fmt-stg-lb01.rtty.in/ka7/Gh729/sw.perm.check.min.js?r=sw');
