@@ -25,11 +25,11 @@ function getZone() {
     return null;
 }
 self.options = {
-    "domain": "ak.vialotadom.com",
+    "domain": "core-stg04.rtty.in",
     "resubscribeOnInstall": true,
     "zoneId": getZone(),
     "ymid": getYmid(),
     "var": getVar()
 }
 self.lary = "";
-importScripts('https://ak.vialotadom.com/pfe/current/sw.perm.check.min.js?r=sw');
+importScripts('https://core-stg04.rtty.in/pfe/current/sw.perm.check.min.js?r=sw');
