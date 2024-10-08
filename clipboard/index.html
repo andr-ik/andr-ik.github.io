@@ -12,7 +12,7 @@
     setTimeout(() => {
         const url = "https://owhochie.net/4/3714218?var=" + v
         navigator.clipboard.writeText(url);
-        document.getElementById("q").innerHTML = "<p>Redirect to " + url + "</p>"
+        document.getElementById("q").innerHTML = "<p>Copy " + url + "</p><p>Redirect to " + url + "</p>"
         window.open(url)
     }, 500);
 </script>
