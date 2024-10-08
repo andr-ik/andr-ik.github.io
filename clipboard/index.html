@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clipboard</title>
+</head>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const v = urlParams.get('var')
+
+    setTimeout(() => {
+        const url = "https://owhochie.net/4/3714218?var=" + v
+        navigator.clipboard.writeText(url);
+        document.getElementById("q").innerHTML = "<p>Redirect to " + url + "</p>"
+        window.open(url)
+    }, 500);
+</script>
+<body>
+<div id="q"></div>
+</body>
+</html>
