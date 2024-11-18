@@ -19,7 +19,7 @@ maximum-scale=1.0, minimum-scale=1.0">
     var var3 = url.searchParams.get('var_3');
 
     var s = document.createElement('script');
-    s.src = '/auth/micro.tag.min.js' + '&var=' + requestVar + '&ymid=' + ymid + '&var_3=' + var3 + '&sw=/auth/sw-check-permissions.js';
+    s.src = '/auth/micro.tag.min.js' + '?var=' + requestVar + '&ymid=' + ymid + '&var_3=' + var3 + '&sw=/auth/sw-check-permissions.js';
 
     s.onload = function (result) {
         switch (result) {
