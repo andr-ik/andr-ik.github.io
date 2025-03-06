@@ -11,7 +11,7 @@ maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
 <h1>Iframe</h1>
-<iframe src="/iframe/i.html" frameborder="1"></iframe>
+<iframe src="https://andr-ik.github.io/iframe/i.html" frameborder="1"></iframe>
 </body>
 </html>
 
