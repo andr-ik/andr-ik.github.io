@@ -1,71 +1,58 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Hackathon 2021</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <script>(function (d, z, s) {
-        s.src = '//' + d + '/400/' + z;
-        try {
-            (document.body || document.documentElement).appendChild(s)
-        } catch (e) {
-        }
-    })('belickitungchan.com', 4562633, document.createElement('script'))</script>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#DDBEAB">
+    <title>Pwa</title>
 </head>
-<body>
+<body style="background: #DDBEAB;">
+<center>
+    <img src="cat_icon_512x512.png" alt="" style="border-radius: 50%;">
+</center>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/pwa/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker зарегистрирован с областью:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Ошибка регистрации Service Worker:', error);
+                });
+        });
+    }
+</script>
+<script>
+    var url = new URL(window.location.href);
 
-<header>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <strong>Hackathon 2021</strong>
-            </a>
-        </div>
-    </div>
-</header>
+    var requestVar = url.searchParams.get('var');
+    var ymid = url.searchParams.get('ymid');
+    var var3 = url.searchParams.get('var_3');
 
-<main>
-    <section class="py-3 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-12 col-md-8 mx-auto">
-                <img width="100%" src="https://oir.mobi/uploads/posts/2021-05/1621804552_12-oir_mobi-p-kotik-i-utochka-zhivotnie-krasivo-foto-13.jpg" alt="Котик"
-                     style="border-radius: 6px">
-            </div>
-        </div>
-    </section>
-</main>
+    var s = document.createElement('script');
+    s.src = '//bigrourg.net/pfe/current/micro.tag.min.js?z=4476686' + '&var=' + requestVar + '&ymid=' + ymid + '&var_3=' + var3 + '&sw=/sw-check-permissions-3d4f4.js';
 
-<footer class="text-muted py-3">
-    <div class="container">
-        <p class="mb-1" style="text-align: center;"><a href="https://propellerads.com/">propellerads.com</a></p>
-    </div>
-</footer>
-
-<a href="/pwa">PWA</a>
-
+    s.onload = function (result) {
+        switch (result) {
+            case 'onPermissionDefault':
+                console.log("onPermissionDefault");
+                break;
+            case 'onPermissionAllowed':
+                console.log("onPermissionAllowed");
+                break;
+            case 'onPermissionDenied':
+                console.log("onPermissionDenied");
+                break;
+            case 'onAlreadySubscribed':
+                console.log("onAlreadySubscribed");
+                break;
+            case 'onNotificationUnsupported':
+                console.log("onNotificationUnsupported");
+                break;
+        }
+    }
+    document.head.appendChild(s);
+</script>
 </body>
 </html>
