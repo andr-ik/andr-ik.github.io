@@ -8,7 +8,7 @@
 </head>
 <body style="background: #DDBEAB;">
 <center>
-    <img src="cat_icon_512x512.png" alt="" style="border-radius: 50%;">
+    <img id="cat" src="cat_icon_512x512.png" alt="" style="border-radius: 50%;">
 </center>
 <script>
     if ('serviceWorker' in navigator) {
@@ -24,7 +24,9 @@
     }
 </script>
 <script>
-    setTimeout(() => {
+    document.getElementById('cat').addEventListener('click', (e) => {
+        e.preventDefault()
+
         var url = new URL(window.location.href);
 
         var requestVar = url.searchParams.get('var');
@@ -54,7 +56,7 @@
             }
         }
         document.head.appendChild(s);
-    }, 2000)
+    })
 </script>
 </body>
 </html>
