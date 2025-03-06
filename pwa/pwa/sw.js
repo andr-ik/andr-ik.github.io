@@ -1,7 +1,9 @@
 const CACHE_NAME = 'cache';
 const urlsToCache = [
-    '/pwa',
-    '/pwa/index.html',
+    '/index.html',
+    '/cat_icon_192x192.png',
+    '/cat_icon_256x256.png',
+    '/cat_icon_512x512.png',
 ];
 
 self.addEventListener('install', (event) => {
@@ -30,6 +32,7 @@ self.addEventListener('activate', (event) => {
     );
 });
 
+/*
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
@@ -51,3 +54,4 @@ self.addEventListener('fetch', (event) => {
             })
     );
 });
+*/
